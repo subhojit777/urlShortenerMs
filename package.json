@@ -1,0 +1,27 @@
+{
+  "name": "url-shortener-ms",
+  "version": "1.0.0",
+  "description": "https://www.freecodecamp.com/challenges/url-shortener-microservice",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subhojit777/urlShortenerMs.git"
+  },
+  "author": "Subhojit Paul <subhojitpaul21@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subhojit777/urlShortenerMs/issues"
+  },
+  "homepage": "https://github.com/subhojit777/urlShortenerMs#readme",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "mongodb": "^2.2.5",
+    "valid-url": "^1.0.9"
+  }
+}
