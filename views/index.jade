@@ -1,12 +1,12 @@
 extends layout
 
 block content
-  h1 Register a short url
+  h1= title
   h2 Usage
   h3 Input
   code #{host}/new/http://google.com
   h3 Output
-  code #{host}/42
+  code {"originalUrl":"http://google.com", "shortUrl":"#{host}/42"}
   p Go to
     code  #{host}/42 and  you will be redirected to
     code  http://google.com

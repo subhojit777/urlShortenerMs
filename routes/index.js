@@ -11,6 +11,7 @@ var dbHelper = require('../db/dbHelper');
  */
 router.get('/', function(req, res, next) {
   res.render('index', {
+    title: 'Url Shortener Microservice',
     host: req.headers.host
   });
 });
