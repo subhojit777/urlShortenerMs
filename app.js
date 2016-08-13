@@ -3,6 +3,8 @@
 require('dotenv').config();
 var express = require('express');
 var path = require('path');
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
 
 var port = process.env.PORT || 3000;
 var routes = require('./routes/index');
@@ -48,6 +50,10 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(port, function() {
-  console.log('Listening on port ' + port + ' ...');
+MongoClient.connect(process.env.MONGO_URI, function(err, db) {
+  assert.equal(err, null);
+  app.locals.db = db;
+  app.listen(port, function() {
+    console.log('Listening on port ' + port + ' ...');
+  });
 });
