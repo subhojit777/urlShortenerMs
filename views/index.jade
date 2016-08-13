@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Register a short url
+  h2 Usage
+  h3 Input
+  code #{host}/new/http://google.com
+  h3 Output
+  code #{host}/42
+  p Go to
+    code  #{host}/42 and  you will be redirected to
+    code  http://google.com
+  blockquote If you enter request a short url that does not exists, you will get an error message like this
+    code  {"error":"No record found"}
