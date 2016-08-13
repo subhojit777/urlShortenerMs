@@ -1,16 +1,21 @@
 'use strict';
 
-require('dotenv').config();
 var express = require('express');
 var validUrl = require('valid-url');
 var router = express.Router();
 var assert = require('assert');
 var dbHelper = require('../db/dbHelper');
 
+/**
+ * The home page.
+ */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/**
+ * Registers a new short url.
+ */
 router.get('/new/(*)', function(req, res) {
   if (validUrl.isUri(req.params[0])) {
     var db = req.app.locals.db;
@@ -39,6 +44,12 @@ router.get('/new/(*)', function(req, res) {
   }
 });
 
+/**
+ * Router for the short url.
+ *
+ * If the passed id is registered, then it will redirect to the original url.
+ * Otherwise, an error message will be shown.
+ */
 router.get('/:id(\\d+)/', function(req, res) {
   var db = req.app.locals.db;
 
